@@ -1,12 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React, {useState} from 'react';
+import Icon from 'react-native-ionicons';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AuthStack from './Navigation/AuthStack'
+import AppStack from './Navigation/AppStack';
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AppStack/>
+    </NavigationContainer>
   );
 }
 
@@ -17,4 +25,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    justifyContent:'center',
+    alignItems:'center',
+    width: 400,
+    paddingBottom:60,
+    height: 70,
+    resizeMode: 'contain' }
 });
